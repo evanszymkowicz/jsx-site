@@ -1,0 +1,21 @@
+
+@import "reset";
+//Sass variables have to be declared at the top of the file (after reset)
+@import url( 'https://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700');
+@import "variables";
+@import "grid";
+@import "Header";
+@import "LeadImage";
+@import "Background";
+@import "SpecialMenu";
+@import "Global";
+// font-family: 'Rozha One', serif;
+// font-family: 'RT Sans', sans-serif;
+// font-family: 'Open Sans Condensed', sans-serif;
+body {
+  font-family: $textFont; //Some css tricks to make the process faster
+  width: 100x;
+  height: 100vh;
+  overflow-x: hidden;
+  background: #fff;
+}

@@ -1,0 +1,76 @@
+#SeasonalMenu {
+	padding: 100px 0;
+	background: #fdd; //linear-gradient(135deg, rgba(0,0,0,.4) 0, #002d77 100%);
+	background-image:
+	url("https://media.pixcove.com/N/2/9/Background-Contextual-Textures-Backgrounds-Texture-8406.jpg");
+	background-position: center;
+	// background-size: cover;
+	background-repeat: repeat;
+
+	h2,h5 {
+		text-align: center;
+	}
+	.box {
+		background: #fff;
+		padding: 20px;
+
+		.box-img {
+			width: 100px;
+			height: 200px;
+			background: linear-gradient(135deg, rgba(0,0,0,.4) 0, #002d77 100%);
+			background-image:
+				linear-gradient(135deg, rgba(0, 0, 0, .4) 0, #002d77 100%), url("https://boisedev.com/wp-content/uploads/2018/10/Grove-Oct-2018006s-1068x718.jpg");
+			background-position: center;
+			background-size: cover;
+			positon: relative;
+			margin-bottom: 75px;
+		}
+
+		.pricey-boy {
+			box-sizing: border-box;
+			position: absolute;
+			bottom: 0;
+			margin: 0 auto;
+			font-family: $displayFont;
+			font-size: 2.7rem;
+			background: #fff;
+			height: 100px;
+			width: 100px;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			left: 50%;
+			transform: translateX(-50%, -50%);// IDEA: come back to this for the portfolio site
+			// -webkit-box-shadow: 0 0 0 10px rgba(232, 232, 232, 0.41);
+			// -moz-box-shadow: 0 0 0 10px rgba(232, 232, 232, 0.41);
+			box-shadow: 0 0 0 10px rgba(232, 232, 255, 0.41);
+		}
+
+		.title{
+			display: block;
+			font-weight: 600;
+			font-size: .9rem;
+			text-align: center;
+			line-height: 1.5;
+		}
+		.details{
+			font-weight: 300;
+			font-size: 0.8rem;
+			text-align: center;
+			line-height: 2;
+			margin: 0;
+		}
+
+		.boxes {
+			padding-bottom: 50px;
+		}
+
+		a.link {
+			color: #000;
+			font-family: $displayFont;
+			text-align: center;
+			display: block;
+
+		}
+	}
