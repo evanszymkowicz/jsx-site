@@ -1,7 +1,7 @@
-import { h, app } from 'hyperapp'
-import {actions} from './actions/actions.js'
-import {globalState} from './state/globalState.js'
-import App from './components/App.js'
+import { h, app } from 'hyperapp';
+import {actions} from './actions/actions.js';
+import {globalState} from './state/globalState.js';
+import App from './components/App.js';
 
 app({
   state: {globalState},
@@ -18,5 +18,5 @@ app({
     load (state, actions) {
       actions.intro()
     }
-  }
+  },
 })

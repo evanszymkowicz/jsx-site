@@ -40,11 +40,11 @@ exports.default = App;
 
 var _hyperapp = __webpack_require__(0);
 
-var _Header = __webpack_require__(5);
+var _Header = __webpack_require__(7);
 
 var _Header2 = _interopRequireDefault(_Header);
 
-var _LeadImage = __webpack_require__(6);
+var _LeadImage = __webpack_require__(8);
 
 var _LeadImage2 = _interopRequireDefault(_LeadImage);
 
@@ -52,13 +52,25 @@ var _Background = __webpack_require__(4);
 
 var _Background2 = _interopRequireDefault(_Background);
 
-var _SeasonalMenu = __webpack_require__(8);
+var _SeasonalMenu = __webpack_require__(11);
 
 var _SeasonalMenu2 = _interopRequireDefault(_SeasonalMenu);
 
-var _QuoteGenerator = __webpack_require__(7);
+var _QuoteGenerator = __webpack_require__(9);
 
 var _QuoteGenerator2 = _interopRequireDefault(_QuoteGenerator);
+
+var _Contact = __webpack_require__(5);
+
+var _Contact2 = _interopRequireDefault(_Contact);
+
+var _Reviews = __webpack_require__(10);
+
+var _Reviews2 = _interopRequireDefault(_Reviews);
+
+var _Footer = __webpack_require__(6);
+
+var _Footer2 = _interopRequireDefault(_Footer);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -74,8 +86,10 @@ function App(_ref) {
 			React.createElement(_Header2.default, { state: state, actions: actions }),
 			React.createElement(_LeadImage2.default, { state: state, actions: actions }),
 			React.createElement(_Background2.default, { state: state, actions: actions }),
-			React.createElement(_SeasonalMenu2.default, { state: state, actions: state }),
-			React.createElement(_QuoteGenerator2.default, { state: state, actions: state })
+			React.createElement(_SeasonalMenu2.default, { state: state, actions: actions }),
+			React.createElement(_QuoteGenerator2.default, { state: state, actions: actions }),
+			React.createElement(_Contact2.default, { state: state, actions: actions }),
+			React.createElement(_Reviews2.default, { state: state, actions: actions })
 		)
 	);
 }
@@ -167,6 +181,245 @@ function Background(_ref) {
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
+exports.default = Contact;
+
+var _hyperapp = __webpack_require__(0);
+
+function Contact(_ref) {
+	var state = _ref.state,
+	    actions = _ref.actions;
+
+	return React.createElement(
+		"section",
+		{ id: "contact", className: "texturebg" },
+		React.createElement(
+			"div",
+			{ className: "container" },
+			React.createElement(
+				"h5",
+				{ className: "comp-title" },
+				"Contact"
+			),
+			React.createElement("h2", null),
+			React.createElement(
+				"div",
+				{ className: "box" },
+				React.createElement(
+					"div",
+					{ className: "row" },
+					React.createElement(
+						"div",
+						{ className: "col-md-6" },
+						React.createElement(
+							"div",
+							{ className: "city" },
+							"Washington, D.C."
+						),
+						React.createElement(
+							"h6",
+							{ className: "address" },
+							"123 Somewhere Avenue",
+							React.createElement("br", null),
+							"Washington, D.C."
+						),
+						React.createElement(
+							"p",
+							null,
+							React.createElement(
+								"strong",
+								null,
+								"email us:"
+							),
+							React.createElement(
+								"a",
+								{ href: "mailto:info@steakjoint.com" },
+								"info@steakjoint.com"
+							)
+						)
+					),
+					React.createElement(
+						"div",
+						{ className: "col-md-6" },
+						React.createElement(
+							"h6",
+							null,
+							"Lunch"
+						),
+						React.createElement(
+							"div",
+							{ className: "hours" },
+							"202 555-555"
+						),
+						React.createElement(
+							"p",
+							null,
+							"Come back to this ",
+							React.createElement("br", null)
+						),
+						React.createElement(
+							"h6",
+							null,
+							"Dinner"
+						),
+						React.createElement(
+							"div",
+							{ className: "hours" },
+							"202 555-555"
+						),
+						React.createElement(
+							"p",
+							null,
+							"Come back to this ",
+							React.createElement("br", null)
+						)
+					)
+				)
+			)
+		)
+	);
+}
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Footer;
+
+var _hyperapp = __webpack_require__(0);
+
+function Footer(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
+
+  return React.createElement(
+    "footer",
+    { id: "Footer" },
+    React.createElement(
+      "div",
+      { className: "container" },
+      React.createElement(
+        "nav",
+        { className: "footer-menu" },
+        React.createElement(
+          "a",
+          { href: "#Header" },
+          "Home"
+        ),
+        React.createElement(
+          "a",
+          { href: "#Header" },
+          "Home"
+        ),
+        React.createElement(
+          "p",
+          null,
+          "|"
+        ),
+        React.createElement(
+          "a",
+          { href: "#OurStory" },
+          "About"
+        ),
+        React.createElement(
+          "p",
+          null,
+          "|"
+        ),
+        React.createElement(
+          "a",
+          { href: "#SpecialMenu" },
+          "Seasonal Menu"
+        ),
+        React.createElement(
+          "p",
+          null,
+          "|"
+        ),
+        React.createElement(
+          "a",
+          { href: "#Reviews" },
+          "Reviews"
+        ),
+        React.createElement(
+          "p",
+          null,
+          "|"
+        ),
+        React.createElement(
+          "a",
+          { href: "#Reservations" },
+          "Reservations"
+        ),
+        React.createElement(
+          "p",
+          null,
+          "|"
+        ),
+        React.createElement(
+          "a",
+          { href: "#ContactUs" },
+          "Contact"
+        )
+      ),
+      React.createElement(
+        "ul",
+        { "class": "social-media" },
+        React.createElement(
+          "li",
+          null,
+          React.createElement(
+            "a",
+            { href: "https://twitter.com/", target: "new" },
+            React.createElement("i", { "class": "fa fa-twitter", "aria-hidden": "true" })
+          )
+        ),
+        React.createElement(
+          "li",
+          null,
+          React.createElement(
+            "a",
+            { href: "https://www.facebook.com/", target: "new" },
+            React.createElement("i", { "class": "fa fa-facebook", "aria-hidden": "true" })
+          )
+        ),
+        React.createElement(
+          "li",
+          null,
+          React.createElement(
+            "a",
+            { href: "https://plus.google.com/discover", target: "new" },
+            React.createElement("i", { "class": "fa fa-google-plus", "aria-hidden": "true" })
+          )
+        )
+      ),
+      React.createElement(
+        "div",
+        { "class": "copyright" },
+        React.createElement("i", { "class": "fa fa-copyright", "aria-hidden": "true" }),
+        "Evan Szymkowicz",
+        React.createElement("br", null),
+        "2019"
+      )
+    )
+  );
+}
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
 exports.default = Header;
 
 var _hyperapp = __webpack_require__(0);
@@ -218,7 +471,7 @@ function Header(_ref) {
 }
 
 /***/ }),
-/* 6 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -299,7 +552,7 @@ function LeadImage(_ref) {
 }
 
 /***/ }),
-/* 7 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -318,7 +571,7 @@ function QuoteGenerator(_ref) {
 
 	return React.createElement(
 		"section",
-		{ id: "SpecialMenu", className: "texturebg" },
+		{ id: "QuoteGenerator", className: "texturebg" },
 		React.createElement(
 			"div",
 			{ className: "container" },
@@ -333,7 +586,84 @@ function QuoteGenerator(_ref) {
 }
 
 /***/ }),
-/* 8 */
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = Reviews;
+
+var _hyperapp = __webpack_require__(0);
+
+function Reviews(_ref) {
+	var state = _ref.state,
+	    actions = _ref.actions;
+
+	return React.createElement(
+		"section",
+		{ id: "Reviews" },
+		React.createElement(
+			"div",
+			{ className: "container" },
+			React.createElement(
+				"div",
+				{ className: "row" },
+				React.createElement(
+					"div",
+					{ className: "col-md-8" },
+					React.createElement("img", { src: "" })
+				)
+			),
+			React.createElement(
+				"div",
+				{ className: "col-md-4" },
+				React.createElement(
+					"h5",
+					{ className: "comp-title" },
+					"What They're Saying"
+				),
+				React.createElement(
+					"h2",
+					null,
+					"Gabagool?"
+				),
+				React.createElement(
+					"h4",
+					null,
+					"Ova Here!"
+				),
+				React.createElement(
+					"p",
+					null,
+					"Some text"
+				),
+				React.createElement(
+					"div",
+					{ className: "auth" },
+					React.createElement(
+						"strong",
+						null,
+						"John Q. Doe"
+					),
+					" - this steak is p dank"
+				),
+				React.createElement(
+					"div",
+					{ className: "decoration" },
+					React.createElement("i", { className: "fa fa-arrow-left", "aria-hidden": "true" }),
+					React.createElement("i", { className: "fa fa-arrow-right ready", "aria-hidden": "true" })
+				)
+			)
+		)
+	);
+}
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -461,7 +791,7 @@ function SeasonalMenu(_ref) {
 }
 
 /***/ }),
-/* 9 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -503,4 +833,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 });
 
 /***/ })
-],[9]);
+],[12]);

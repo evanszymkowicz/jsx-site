@@ -21,9 +21,9 @@ h5 {
 }
 
 p {
-	font-size: 1.1rem;
+	font-size: 1rem;
 	color: $paragraphColor;
-	line-height: 1.8;
+	line-height: 2;
 	margin: 0.5rem 0 3rem;
 	font-weight: 300;
 }
@@ -34,4 +34,12 @@ a {
 	&:hover {
 		color: $red;
 	}
+}
+
+strong {
+	font-weight: 600;
+}
+
+.texturebg {
+	background: $greyBG;
 }
