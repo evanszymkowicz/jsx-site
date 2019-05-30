@@ -52,9 +52,13 @@ var _Background = __webpack_require__(4);
 
 var _Background2 = _interopRequireDefault(_Background);
 
-var _SeasonalMenu = __webpack_require__(7);
+var _SeasonalMenu = __webpack_require__(8);
 
 var _SeasonalMenu2 = _interopRequireDefault(_SeasonalMenu);
+
+var _QuoteGenerator = __webpack_require__(7);
+
+var _QuoteGenerator2 = _interopRequireDefault(_QuoteGenerator);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -70,7 +74,8 @@ function App(_ref) {
 			React.createElement(_Header2.default, { state: state, actions: actions }),
 			React.createElement(_LeadImage2.default, { state: state, actions: actions }),
 			React.createElement(_Background2.default, { state: state, actions: actions }),
-			React.createElement(SpecialMenu, { state: state, actions: state })
+			React.createElement(_SeasonalMenu2.default, { state: state, actions: state }),
+			React.createElement(_QuoteGenerator2.default, { state: state, actions: state })
 		)
 	);
 }
@@ -220,77 +225,115 @@ function Header(_ref) {
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 exports.default = LeadImage;
 
 var _hyperapp = __webpack_require__(0);
 
 function LeadImage(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
+
+  return (
+    //I'm going to keep using className so I don't forget about it
+    //Hyper doesn't require it, but it is jsx standard
+    React.createElement(
+      "section",
+      { id: "LeadImage" },
+      React.createElement(
+        "div",
+        { className: "container" },
+        React.createElement(
+          "div",
+          { className: "title" },
+          React.createElement(
+            "h5",
+            null,
+            "Welcome"
+          ),
+          React.createElement(
+            "h1",
+            null,
+            "D.C. Steakhouse"
+          )
+        ),
+        React.createElement(
+          "div",
+          { className: "contact-info" },
+          React.createElement(
+            "div",
+            { className: "container" },
+            React.createElement(
+              "div",
+              { className: "book" },
+              "Call us Today"
+            ),
+            React.createElement(
+              "h2",
+              null,
+              "(202) 555-5555"
+            ),
+            React.createElement(
+              "div",
+              { className: "hours" },
+              "Hours ",
+              React.createElement(
+                "strong",
+                null,
+                "Mon - Wed: "
+              ),
+              " 4:30p.m. - 11:45 p.m.",
+              React.createElement(
+                "strong",
+                null,
+                "Thurs - Sat: "
+              ),
+              " 4:00.m. - 1:00 a.m."
+            )
+          )
+        )
+      )
+    )
+  );
+}
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = QuoteGenerator;
+
+var _hyperapp = __webpack_require__(0);
+
+function QuoteGenerator(_ref) {
 	var state = _ref.state,
 	    actions = _ref.actions;
 
-	return (
-		//I'm going to keep using className so I don't forget about it
-		//Hyper doesn't require it, but it is jsx standard
+	return React.createElement(
+		"section",
+		{ id: "SpecialMenu", className: "texturebg" },
 		React.createElement(
-			"section",
-			{ id: "LeadImage" },
+			"div",
+			{ className: "container" },
 			React.createElement(
-				"div",
-				{ className: "container" },
-				React.createElement(
-					"div",
-					{ className: "title" },
-					React.createElement(
-						"h5",
-						null,
-						"Welcome"
-					),
-					React.createElement(
-						"h1",
-						null,
-						"D.C. Steakhouse"
-					)
-				),
-				React.createElement(
-					"div",
-					{ className: "contact-info" },
-					React.createElement(
-						"div",
-						{ className: "book" },
-						"Call us Today"
-					),
-					React.createElement(
-						"h2",
-						null,
-						"(202) 555-5555"
-					),
-					React.createElement(
-						"div",
-						{ className: "hours" },
-						"Hours ",
-						React.createElement(
-							"strong",
-							null,
-							"Mon - Wed: "
-						),
-						" 4:30p.m. - 11:45 p.m.",
-						React.createElement(
-							"strong",
-							null,
-							"Thurs - Sat: "
-						),
-						" 4:00.m. - 1:00 a.m."
-					)
-				)
-			)
+				"h1",
+				null,
+				"What They're Saying:"
+			),
+			React.createElement("span", { className: "John J. Doe" })
 		)
 	);
 }
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -309,7 +352,7 @@ function SeasonalMenu(_ref) {
 
 	return React.createElement(
 		"section",
-		{ id: "SpecialMenu" },
+		{ id: "SpecialMenu", className: "texturebg" },
 		React.createElement(
 			"div",
 			{ className: "container" },
@@ -341,7 +384,6 @@ function SeasonalMenu(_ref) {
 								"$39"
 							)
 						),
-						"//TODO: come back to this for the portfolio site",
 						React.createElement(
 							"span",
 							{ className: "title" },
@@ -369,7 +411,6 @@ function SeasonalMenu(_ref) {
 								"$39"
 							)
 						),
-						"//TODO: come back to this for the portfolio site",
 						React.createElement(
 							"span",
 							{ className: "title" },
@@ -397,7 +438,6 @@ function SeasonalMenu(_ref) {
 								"$39"
 							)
 						),
-						"//TODO: come back to this for the portfolio site",
 						React.createElement(
 							"span",
 							{ className: "title" },
@@ -421,7 +461,7 @@ function SeasonalMenu(_ref) {
 }
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -463,4 +503,4 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 });
 
 /***/ })
-],[8]);
+],[9]);
