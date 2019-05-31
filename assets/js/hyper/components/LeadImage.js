@@ -1,6 +1,7 @@
 import { h, app } from "hyperapp";
 
 export default function LeadImage({ state, actions }) {
+  // console.log(state.globalState.companyInfo.title)
   return (
     //I'm going to keep using className so I don't forget about it
     //Hyper doesn't require it, but it is jsx standard
@@ -8,7 +9,7 @@ export default function LeadImage({ state, actions }) {
       <div className="container">
         <div className="title">
           <h5>Welcome</h5>
-          <h1>D.C. Steakhouse</h1>
+          <h1>{this.state.globalState.companyInfo.title}</h1>
         </div>
         <div className="contact-info">
           <div className="container">

@@ -34,7 +34,7 @@ function intro(state, actions) {
 
 
 Object.defineProperty(exports, "__esModule", {
-	value: true
+  value: true
 });
 exports.default = App;
 
@@ -75,23 +75,24 @@ var _Footer2 = _interopRequireDefault(_Footer);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App(_ref) {
-	var state = _ref.state,
-	    actions = _ref.actions;
+  var state = _ref.state,
+      actions = _ref.actions;
 
-	return (
-		//do this to pass down state to every component
-		React.createElement(
-			'div',
-			{ 'class': 'app' },
-			React.createElement(_Header2.default, { state: state, actions: actions }),
-			React.createElement(_LeadImage2.default, { state: state, actions: actions }),
-			React.createElement(_Background2.default, { state: state, actions: actions }),
-			React.createElement(_SeasonalMenu2.default, { state: state, actions: actions }),
-			React.createElement(_QuoteGenerator2.default, { state: state, actions: actions }),
-			React.createElement(_Contact2.default, { state: state, actions: actions }),
-			React.createElement(_Reviews2.default, { state: state, actions: actions })
-		)
-	);
+  return (
+    //do this to pass down state to every component
+    React.createElement(
+      "div",
+      { "class": "app" },
+      React.createElement(_Header2.default, { state: state, actions: actions }),
+      React.createElement(_LeadImage2.default, { state: state, actions: actions }),
+      React.createElement(_Background2.default, { state: state, actions: actions }),
+      React.createElement(_SeasonalMenu2.default, { state: state, actions: actions }),
+      React.createElement(_QuoteGenerator2.default, { state: state, actions: actions }),
+      React.createElement(_Contact2.default, { state: state, actions: actions }),
+      React.createElement(_Reviews2.default, { state: state, actions: actions }),
+      React.createElement(_Footer2.default, { state: state, actions: actions })
+    )
+  );
 }
 
 /***/ }),
@@ -104,8 +105,16 @@ function App(_ref) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+var companyInfo = {
+  //regular object, no JSON
+  title: " Restaurant",
+  phone: "202-555-5555",
+  location: "Washington, D.C."
+};
+
 var globalState = exports.globalState = {
-  count: 0
+  count: 0,
+  companyInfo: companyInfo //older versions of JS would require setting the property equal to the variable
 };
 
 /***/ }),
@@ -213,7 +222,7 @@ function Contact(_ref) {
 						React.createElement(
 							"div",
 							{ className: "city" },
-							"Washington, D.C."
+							state.companyInfo.location
 						),
 						React.createElement(
 							"h6",
@@ -488,6 +497,7 @@ function LeadImage(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
+  // console.log(state.globalState.companyInfo.title)
   return (
     //I'm going to keep using className so I don't forget about it
     //Hyper doesn't require it, but it is jsx standard
@@ -508,7 +518,7 @@ function LeadImage(_ref) {
           React.createElement(
             "h1",
             null,
-            "D.C. Steakhouse"
+            this.state.globalState.companyInfo.title
           )
         ),
         React.createElement(
@@ -636,11 +646,7 @@ function Reviews(_ref) {
 					null,
 					"Ova Here!"
 				),
-				React.createElement(
-					"p",
-					null,
-					"Some text"
-				),
+				React.createElement("p", null),
 				React.createElement(
 					"div",
 					{ className: "auth" },
@@ -810,11 +816,11 @@ var _App2 = _interopRequireDefault(_App);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _hyperapp.app)({
-  state: { globalState: _globalState.globalState },
+  state: _globalState.globalState,
   view: function view(state, actions) {
     return React.createElement(_App2.default, { state: state, actions: actions });
   },
-  root: document.getElementById('app'),
+  root: document.getElementById("app"),
   actions: _actions.actions,
   events: {
     action: function action(state, actions, _ref) {

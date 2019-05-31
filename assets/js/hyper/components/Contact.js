@@ -8,10 +8,9 @@ export default function Contact({state, actions}) {
 				<h2></h2>
 				<div className="box">
 					<div className="row">
-						{/* Left div (address) */}
 						<div className="col-md-6">
 							<div className="city">
-								Washington, D.C.
+								{state.companyInfo.location}
 							</div>
 							<h6 className="address">
 									123 Somewhere Avenue<br/>
@@ -19,8 +18,6 @@ export default function Contact({state, actions}) {
 							</h6>
 							<p><strong>email us:</strong><a href="mailto:info@steakjoint.com">info@steakjoint.com</a></p>
 							</div>
-
-							 {/* Right div (hours of opp) */}
 							<div className="col-md-6">
 									<h6>
 									Lunch

@@ -1,22 +1,21 @@
-export const actions = {
-	up,
-	intro,
-	showMenu
+//this the only part of the app that uses actions
+var arrowLeft = function(state, actions) {
+  return {
+    reviewStatus: {
+      currentReview: state.reviewCount.currentReview - 1
+    }
+  };
 };
 
-function up (state, actions) {
-	return (
-		{count: state.count + 1}
-	);
-}
+var arrowRight = function(state, actions) {
+  return {
+    reviewStatus: {
+      currentReview: state.reviewCount.currentReview + 1
+    }
+  };
+};
 
-function showMenu () {
-
-}
-
-function intro (state, actions) {
-	console.log('Just fired off an action');
-	return (
-		{count: state.count + 1}
-	);
-}
+export const actions = {
+  arrowLeft,
+  arrowRight
+};
