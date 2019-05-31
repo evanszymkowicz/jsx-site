@@ -6,7 +6,7 @@ import App from "./components/App.js";
 
 App({
   state: globalState,
-  view: (state, actions) => <App state={state} actions={actions} />,
+  view: (state, actions) => <app state={state} actions={actions} />,
   root: document.getElementById("app"),
   actions,
   events: {

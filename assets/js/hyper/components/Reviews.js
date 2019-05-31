@@ -18,19 +18,19 @@ export default function Reviews({ state, actions }) {
     );
   };
 
-var arrowLeftBtn = function() {
+var smashThatLeftClick = function() {
   if(state.reviewCount.currentReview == 0) {
-    console.log('ignore')
+    //console.log('we gucci')
   } else {
-    actions.arrowLeft()
+    actions.arrowLeftBtn()
   }
 }
 
-var arrowRightBtn = function() {
-  if(state.reviewCount.currentReview == (state.reviews.length -1) {
-    console.log('ignore')
+var smashThatRightClick = function() {
+  if(state.reviewCount.currentReview == (state.reviews.length -1)) {
+    //console.log('we gucci')
   } else {
-    actions.arrowRight
+    actions.arrowRightBtn()
   }
 }
 
@@ -48,8 +48,11 @@ var arrowRightBtn = function() {
           {/* Scroll function: Each review is indexed 1-4. If there is one in the que, (an index greater than 0), the arrow button will work.
           If the current index is equal to the max (length -1), the the arrow will not work and turn gray. (The boolean will switch to [? '' : 'ready '] from [? 'ready' : '']) */}
           <div className="decoration">
-            <i className={`fa fa-arrow-left ${(state.reviewCount.currentReview > 0) ? 'ready' : ''}`} aria-hidden="true" />
-            <i onClick={arrowRightBtn} className={`fa fa-arrow-right ${(state.reviewCount.currentReview == (state.reviews.length -1)) ? '' : 'ready'}`} aria-hidden="true" />
+            <i onClick={smashThatLeftClick}
+              className={`fa fa-arrow-left ${(state.reviewCount.currentReview > 0) ? 'ready' : ''}`}
+              aria-hidden="true"></i>
+            <i onClick={smashThatRightClick}
+              className={`fa fa-arrow-right ${(state.reviewCount.currentReview == (state.reviews.length -1)) ? '' : 'ready'}`} aria-hidden="true"></i>
           </div>
         </div>
       </div>

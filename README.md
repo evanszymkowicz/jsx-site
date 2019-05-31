@@ -30,3 +30,7 @@ The way this works:<br>
 -Keys match up with JS object inside a div. Ex: {this.state.someID}<br>
 -Load actions for the arrows (called down from Hyperapp) and use JS logic so that they work properly.<br>
 -This needs to be debugged before it is ready.
+
+## May 31
+
+Almost done. Few more things to clean up.

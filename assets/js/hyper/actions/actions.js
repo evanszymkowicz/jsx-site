@@ -10,7 +10,7 @@ var arrowLeft = function(state, actions) {
 var arrowRight = function(state, actions) {
   return {
     reviewStatus: {
-      currentReview: state.reviewCount.currentReview + 1
+      currentReview: state.reviewStatus.currentReview + 1
     }
   };
 };
