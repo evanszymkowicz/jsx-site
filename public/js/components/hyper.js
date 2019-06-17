@@ -1,110 +1,90 @@
 webpackJsonp([0],[
 /* 0 */,
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 1 */,
+/* 2 */,
+/* 3 */,
+/* 4 */,
+/* 5 */,
+/* 6 */,
+/* 7 */,
+/* 8 */,
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-var actions = exports.actions = {
-	up: up,
-	intro: intro,
-	showMenu: showMenu
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return actions; });
+//this the only part of the app that uses actions
+var arrowLeft = function arrowLeft(state, actions) {
+  return {
+    reviewStatus: {
+      currentReview: state.reviewCount.currentReview - 1
+    }
+  };
 };
 
-function up(state, actions) {
-	return { count: state.count + 1 };
-}
+var arrowRight = function arrowRight(state, actions) {
+  return {
+    reviewStatus: {
+      currentReview: state.reviewStatus.currentReview + 1
+    }
+  };
+};
 
-function showMenu() {}
-
-function intro(state, actions) {
-	console.log('Just fired off an action');
-	return { count: state.count + 1 };
-}
+var actions = {
+  arrowLeft: arrowLeft,
+  arrowRight: arrowRight,
+  intro: intro,
+  // showMenu,
+  closeMenu: closeMenu,
+  close: close
+};
 
 /***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = App;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Header_js__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__LeadImage_js__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Background_js__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__SeasonalMenu_js__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__QuoteGenerator_js__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Contact_js__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__Reviews_js__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__Reservations_js__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__Promotions_js__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__Footer_js__ = __webpack_require__(15);
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = App;
 
-var _hyperapp = __webpack_require__(0);
 
-var _Header = __webpack_require__(7);
 
-var _Header2 = _interopRequireDefault(_Header);
 
-var _LeadImage = __webpack_require__(8);
 
-var _LeadImage2 = _interopRequireDefault(_LeadImage);
 
-var _Background = __webpack_require__(4);
 
-var _Background2 = _interopRequireDefault(_Background);
 
-var _SeasonalMenu = __webpack_require__(11);
 
-var _SeasonalMenu2 = _interopRequireDefault(_SeasonalMenu);
-
-var _QuoteGenerator = __webpack_require__(9);
-
-var _QuoteGenerator2 = _interopRequireDefault(_QuoteGenerator);
-
-var _Contact = __webpack_require__(5);
-
-var _Contact2 = _interopRequireDefault(_Contact);
-
-var _Reviews = __webpack_require__(10);
-
-var _Reviews2 = _interopRequireDefault(_Reviews);
-
-var _Footer = __webpack_require__(6);
-
-var _Footer2 = _interopRequireDefault(_Footer);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function App(_ref) {
   var state = _ref.state,
       actions = _ref.actions;
 
-  return (
-    //do this to pass down state to every component
-    React.createElement(
-      "div",
-      { "class": "app" },
-      React.createElement(_Header2.default, { state: state, actions: actions }),
-      React.createElement(_LeadImage2.default, { state: state, actions: actions }),
-      React.createElement(_Background2.default, { state: state, actions: actions }),
-      React.createElement(_SeasonalMenu2.default, { state: state, actions: actions }),
-      React.createElement(_QuoteGenerator2.default, { state: state, actions: actions }),
-      React.createElement(_Contact2.default, { state: state, actions: actions }),
-      React.createElement(_Reviews2.default, { state: state, actions: actions }),
-      React.createElement(_Footer2.default, { state: state, actions: actions })
-    )
+  return React.createElement(
+    "div",
+    { "class": 'app' },
+    React.createElement(__WEBPACK_IMPORTED_MODULE_1__Header_js__["a" /* default */], { state: state, actions: actions })
   );
 }
 
 /***/ }),
-/* 3 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 11 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return globalState; });
 var companyInfo = {
   //regular object, no JSON
   title: " Restaurant",
@@ -112,24 +92,45 @@ var companyInfo = {
   location: "Washington, D.C."
 };
 
-var globalState = exports.globalState = {
+var seasonalMenu = [{
+  title: "",
+  description: "",
+  price: 25
+}];
+
+var reviews = [{
+  author: "",
+  outlet: "",
+  authorID: "",
+  slugLine: "",
+  review: ""
+}];
+
+var dankQuotes = [{
+  author: "",
+  quote: ""
+}];
+
+var globalState = {
   count: 0,
-  companyInfo: companyInfo //older versions of JS would require setting the property equal to the variable
+  companyInfo: companyInfo, //older versions of JS would require setting the property equal to the variable
+  seasonalMenu: seasonalMenu,
+  reviews: reviews,
+  dankQuotes: dankQuotes,
+  reviewCount: {
+    currentReview: 1
+  }
 };
 
 /***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 12 */,
+/* 13 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* unused harmony export default */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp__ = __webpack_require__(0);
 
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-exports.default = Background;
-
-var _hyperapp = __webpack_require__(0);
 
 function Background(_ref) {
 	var state = _ref.state,
@@ -181,18 +182,13 @@ function Background(_ref) {
 }
 
 /***/ }),
-/* 5 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 14 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* unused harmony export default */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp__ = __webpack_require__(0);
 
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-exports.default = Contact;
-
-var _hyperapp = __webpack_require__(0);
 
 function Contact(_ref) {
 	var state = _ref.state,
@@ -289,209 +285,193 @@ function Contact(_ref) {
 }
 
 /***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 15 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* unused harmony export default */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp__ = __webpack_require__(0);
 
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = Footer;
-
-var _hyperapp = __webpack_require__(0);
 
 function Footer(_ref) {
-  var state = _ref.state,
-      actions = _ref.actions;
-
-  return React.createElement(
-    "footer",
-    { id: "Footer" },
-    React.createElement(
-      "div",
-      { className: "container" },
-      React.createElement(
-        "nav",
-        { className: "footer-menu" },
-        React.createElement(
-          "a",
-          { href: "#Header" },
-          "Home"
-        ),
-        React.createElement(
-          "a",
-          { href: "#Header" },
-          "Home"
-        ),
-        React.createElement(
-          "p",
-          null,
-          "|"
-        ),
-        React.createElement(
-          "a",
-          { href: "#OurStory" },
-          "About"
-        ),
-        React.createElement(
-          "p",
-          null,
-          "|"
-        ),
-        React.createElement(
-          "a",
-          { href: "#SpecialMenu" },
-          "Seasonal Menu"
-        ),
-        React.createElement(
-          "p",
-          null,
-          "|"
-        ),
-        React.createElement(
-          "a",
-          { href: "#Reviews" },
-          "Reviews"
-        ),
-        React.createElement(
-          "p",
-          null,
-          "|"
-        ),
-        React.createElement(
-          "a",
-          { href: "#Reservations" },
-          "Reservations"
-        ),
-        React.createElement(
-          "p",
-          null,
-          "|"
-        ),
-        React.createElement(
-          "a",
-          { href: "#ContactUs" },
-          "Contact"
-        )
-      ),
-      React.createElement(
-        "ul",
-        { "class": "social-media" },
-        React.createElement(
-          "li",
-          null,
-          React.createElement(
-            "a",
-            { href: "https://twitter.com/", target: "new" },
-            React.createElement("i", { "class": "fa fa-twitter", "aria-hidden": "true" })
-          )
-        ),
-        React.createElement(
-          "li",
-          null,
-          React.createElement(
-            "a",
-            { href: "https://www.facebook.com/", target: "new" },
-            React.createElement("i", { "class": "fa fa-facebook", "aria-hidden": "true" })
-          )
-        ),
-        React.createElement(
-          "li",
-          null,
-          React.createElement(
-            "a",
-            { href: "https://plus.google.com/discover", target: "new" },
-            React.createElement("i", { "class": "fa fa-google-plus", "aria-hidden": "true" })
-          )
-        )
-      ),
-      React.createElement(
-        "div",
-        { "class": "copyright" },
-        React.createElement("i", { "class": "fa fa-copyright", "aria-hidden": "true" }),
-        "Evan Szymkowicz",
-        React.createElement("br", null),
-        "2019"
-      )
-    )
-  );
-}
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-exports.default = Header;
-
-var _hyperapp = __webpack_require__(0);
-
-//	I'm going to keep using className so I don't forget about it
-//	Hyper doesn't require it, but it is jsx standard
-
-function Header(_ref) {
 	var state = _ref.state,
 	    actions = _ref.actions;
 
 	return React.createElement(
-		"header",
-		null,
+		"footer",
+		{ id: "Footer" },
 		React.createElement(
 			"div",
 			{ className: "container" },
 			React.createElement(
-				"div",
-				{ className: "logo" },
-				"Logo"
-			),
-			React.createElement(
 				"nav",
-				null,
+				{ className: "footer-menu" },
 				React.createElement(
 					"a",
-					{ href: "#" },
+					{ href: "#Header" },
 					"Home"
 				),
 				React.createElement(
 					"a",
-					{ href: "#" },
-					"Locations"
+					{ href: "#Header" },
+					"Home"
+				),
+				React.createElement(
+					"p",
+					null,
+					"|"
 				),
 				React.createElement(
 					"a",
-					{ href: "#" },
-					"Rewards"
+					{ href: "#OurStory" },
+					"About"
+				),
+				React.createElement(
+					"p",
+					null,
+					"|"
 				),
 				React.createElement(
 					"a",
-					{ href: "#" },
+					{ href: "#SpecialMenu" },
+					"Seasonal Menu"
+				),
+				React.createElement(
+					"p",
+					null,
+					"|"
+				),
+				React.createElement(
+					"a",
+					{ href: "#Reviews" },
+					"Reviews"
+				),
+				React.createElement(
+					"p",
+					null,
+					"|"
+				),
+				React.createElement(
+					"a",
+					{ href: "#Reservations" },
 					"Reservations"
+				),
+				React.createElement(
+					"p",
+					null,
+					"|"
+				),
+				React.createElement(
+					"a",
+					{ href: "#ContactUs" },
+					"Contact"
 				)
+			),
+			React.createElement(
+				"ul",
+				{ "class": "social-media" },
+				React.createElement(
+					"li",
+					null,
+					React.createElement(
+						"a",
+						{ href: "https://twitter.com/", target: "new" },
+						React.createElement("i", { "class": "fa fa-twitter", "aria-hidden": "true" })
+					)
+				),
+				React.createElement(
+					"li",
+					null,
+					React.createElement(
+						"a",
+						{ href: "https://www.facebook.com/", target: "new" },
+						React.createElement("i", { "class": "fa fa-facebook", "aria-hidden": "true" })
+					)
+				),
+				React.createElement(
+					"li",
+					null,
+					React.createElement(
+						"a",
+						{ href: "https://plus.google.com/discover", target: "new" },
+						React.createElement("i", { "class": "fa fa-google-plus", "aria-hidden": "true" })
+					)
+				)
+			),
+			React.createElement(
+				"div",
+				{ "class": "copyright" },
+				React.createElement("i", { "class": "fa fa-copyright", "aria-hidden": "true" }),
+				"Evan Szymkowicz",
+				React.createElement("br", null),
+				"2019"
 			)
 		)
 	);
 }
 
 /***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 16 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (immutable) */ __webpack_exports__["a"] = Header;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp__ = __webpack_require__(0);
 
+//	I'm going to keep using className so I don't forget about it
+//	Hyper doesn't require it, but it is jsx standard
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = LeadImage;
+function Header(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
 
-var _hyperapp = __webpack_require__(0);
+  return React.createElement(
+    "header",
+    null,
+    React.createElement(
+      "div",
+      { className: "container" },
+      React.createElement(
+        "div",
+        { className: "logo" },
+        "Logo"
+      ),
+      React.createElement(
+        "nav",
+        null,
+        React.createElement(
+          "a",
+          { href: "#" },
+          "Home"
+        ),
+        React.createElement(
+          "a",
+          { href: "#" },
+          "Locations"
+        ),
+        React.createElement(
+          "a",
+          { href: "#" },
+          "Rewards"
+        ),
+        React.createElement(
+          "a",
+          { href: "#" },
+          "Reservations"
+        )
+      )
+    )
+  );
+}
+
+/***/ }),
+/* 17 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export default */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp__ = __webpack_require__(0);
+
 
 function LeadImage(_ref) {
   var state = _ref.state,
@@ -562,18 +542,126 @@ function LeadImage(_ref) {
 }
 
 /***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 18 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* unused harmony export default */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp__ = __webpack_require__(0);
 
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-exports.default = QuoteGenerator;
+function Promotions(_ref) {
+	var state = _ref.state,
+	    actions = _ref.actions;
 
-var _hyperapp = __webpack_require__(0);
+	return React.createElement(
+		"section",
+		{ id: "Promotions" },
+		React.createElement(
+			"div",
+			{ className: "container" },
+			React.createElement(
+				"h6",
+				{ "data-aos": "fade", "data-aos-once": "true" },
+				"News"
+			),
+			React.createElement(
+				"h3",
+				{ "data-aos": "fade", "data-aos-once": "true" },
+				"Promotions"
+			),
+			React.createElement(
+				"div",
+				{ className: "specialContainer" },
+				React.createElement("div", {
+					className: "box image1",
+					"data-aos": "fade-right",
+					"data-aos-once": "true"
+				}),
+				React.createElement(
+					"div",
+					{ className: "box event", "data-aos": "fade-right", "data-aos-once": "true" },
+					React.createElement(
+						"div",
+						{ className: "eventTitle" },
+						"Beef Sauteed onions - Let's enjoy!"
+					),
+					React.createElement(
+						"div",
+						{ className: "divider" },
+						"-----------------"
+					),
+					React.createElement(
+						"div",
+						{ className: "eventDetails" },
+						React.createElement(
+							"div",
+							{ className: "eventAddress" },
+							"49-49 Tortellini Ave, Pastafari, Italy"
+						),
+						React.createElement(
+							"div",
+							{ className: "eventTime" },
+							"10:00 AM - 11:00 AM"
+						),
+						React.createElement(
+							"div",
+							{ className: "eventDate" },
+							"March 3rd, 2018"
+						)
+					)
+				),
+				React.createElement(
+					"div",
+					{ className: "box event", "data-aos": "fade-right", "data-aos-once": "true" },
+					React.createElement(
+						"div",
+						{ className: "eventTitle" },
+						"Art photography in foody"
+					),
+					React.createElement(
+						"div",
+						{ className: "divider" },
+						"-----------------"
+					),
+					React.createElement(
+						"div",
+						{ className: "eventDetails" },
+						React.createElement(
+							"div",
+							{ className: "eventAddress" },
+							"162 Hamilton St, Macbeth Township, Shakespeare"
+						),
+						React.createElement(
+							"div",
+							{ className: "eventTime" },
+							"3:00 PM - 7:00 PM"
+						),
+						React.createElement(
+							"div",
+							{ className: "eventDate" },
+							"April 20th, 2018"
+						)
+					)
+				),
+				React.createElement("div", {
+					className: "box image2",
+					"data-aos": "fade-right",
+					"data-aos-once": "true"
+				})
+			)
+		)
+	);
+}
+
+/***/ }),
+/* 19 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export default */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp__ = __webpack_require__(0);
+
 
 function QuoteGenerator(_ref) {
 	var state = _ref.state,
@@ -596,247 +684,406 @@ function QuoteGenerator(_ref) {
 }
 
 /***/ }),
-/* 10 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 20 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* unused harmony export default */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp__ = __webpack_require__(0);
 
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-exports.default = Reviews;
+function Reservations(_ref) {
+  var state = _ref.state,
+      actions = _ref.actions;
 
-var _hyperapp = __webpack_require__(0);
+  return React.createElement(
+    "div",
+    { id: "Reservations", className: "" + (state.times ? "inactive" : "") },
+    React.createElement(
+      "div",
+      { className: "container" },
+      React.createElement(
+        "p",
+        { className: "close", onclick: actions.close },
+        "\xD7"
+      ),
+      React.createElement(
+        "div",
+        { className: "reserveHeader" },
+        "Reservations"
+      ),
+      React.createElement(
+        "div",
+        { className: "reserveSubHeader" },
+        "Fill out the form, secure your spot"
+      ),
+      React.createElement(
+        "form",
+        { id: "ContactForm" },
+        React.createElement(
+          "div",
+          { className: "row" },
+          React.createElement(
+            "div",
+            { className: "col-md-6" },
+            React.createElement(
+              "div",
+              { className: "form-group" },
+              React.createElement("input", {
+                className: "form-control",
+                "data-validation-required-message": "Please enter your name.",
+                id: "name",
+                placeholder: "Name *",
+                required: "",
+                type: "text",
+                "aria-invalid": "false"
+              }),
+              React.createElement(
+                "p",
+                { className: "help-block text-danger" },
+                " "
+              )
+            )
+          ),
+          React.createElement(
+            "div",
+            { className: "col-md-6" },
+            React.createElement(
+              "div",
+              { className: "form-group" },
+              React.createElement("input", {
+                className: "form-control",
+                "data-validation-required-message": "Please enter your phone.",
+                id: "name",
+                placeholder: "Your Phone *",
+                required: "",
+                type: "text"
+              }),
+              React.createElement(
+                "p",
+                { className: "help-block text-danger" },
+                " "
+              )
+            )
+          )
+        ),
+        React.createElement(
+          "div",
+          { className: "row" },
+          React.createElement(
+            "div",
+            { className: "col-md-6" },
+            React.createElement(
+              "div",
+              { className: "form-group" },
+              React.createElement("input", {
+                className: "form-control",
+                "data-validation-required-message": "Please enter your email.",
+                id: "name",
+                placeholder: "Email *",
+                required: "",
+                type: "text",
+                "aria-invalid": "false"
+              }),
+              React.createElement(
+                "p",
+                { className: "help-block text-danger" },
+                " "
+              )
+            )
+          ),
+          React.createElement(
+            "div",
+            { className: "col-md-6" },
+            React.createElement(
+              "div",
+              { className: "form-group" },
+              React.createElement("input", {
+                className: "form-control",
+                "data-validation-required-message": "Please enter your date.",
+                id: "name",
+                placeholder: "Date *",
+                required: "",
+                type: "text"
+              }),
+              React.createElement(
+                "p",
+                { className: "help-block text-danger" },
+                " "
+              )
+            )
+          )
+        ),
+        React.createElement(
+          "div",
+          { className: "col-md-12" },
+          React.createElement(
+            "div",
+            { className: "form-group" },
+            React.createElement("textarea", {
+              className: "form-control",
+              "data-validation-required-message": "Please enter a message.",
+              id: "message",
+              name: "message",
+              placeholder: "Do You Have Any Special Requirements? *",
+              required: ""
+            }),
+            React.createElement(
+              "p",
+              { className: "help-block text-danger" },
+              " "
+            )
+          )
+        ),
+        React.createElement(
+          "div",
+          { className: "row" },
+          React.createElement(
+            "div",
+            { className: "col-lg-12 text-center" },
+            React.createElement(
+              "div",
+              { id: "success" },
+              " "
+            ),
+            React.createElement(
+              "button",
+              {
+                className: "btn btn-contact",
+                type: "button",
+                onclick: actions.close
+              },
+              "Book"
+            )
+          )
+        )
+      )
+    )
+  );
+}
+
+/***/ }),
+/* 21 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* unused harmony export default */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp__ = __webpack_require__(0);
+
 
 function Reviews(_ref) {
-	var state = _ref.state,
-	    actions = _ref.actions;
+  var state = _ref.state,
+      actions = _ref.actions;
 
-	return React.createElement(
-		"section",
-		{ id: "Reviews" },
-		React.createElement(
-			"div",
-			{ className: "container" },
-			React.createElement(
-				"div",
-				{ className: "row" },
-				React.createElement(
-					"div",
-					{ className: "col-md-8" },
-					React.createElement("img", { src: "" })
-				)
-			),
-			React.createElement(
-				"div",
-				{ className: "col-md-4" },
-				React.createElement(
-					"h5",
-					{ className: "comp-title" },
-					"What They're Saying"
-				),
-				React.createElement(
-					"h2",
-					null,
-					"Gabagool?"
-				),
-				React.createElement(
-					"h4",
-					null,
-					"Ova Here!"
-				),
-				React.createElement("p", null),
-				React.createElement(
-					"div",
-					{ className: "auth" },
-					React.createElement(
-						"strong",
-						null,
-						"John Q. Doe"
-					),
-					" - this steak is p dank"
-				),
-				React.createElement(
-					"div",
-					{ className: "decoration" },
-					React.createElement("i", { className: "fa fa-arrow-left", "aria-hidden": "true" }),
-					React.createElement("i", { className: "fa fa-arrow-right ready", "aria-hidden": "true" })
-				)
-			)
-		)
-	);
+  var searchReviews = function searchReviews() {
+    return React.createElement(
+      "div",
+      null,
+      React.createElement(
+        "h5",
+        { className: "comp-title" },
+        "What They're Saying"
+      ),
+      React.createElement(
+        "h2",
+        null,
+        state.reviews[state.reviewCount.currentReview].outlet
+      ),
+      React.createElement(
+        "h4",
+        null,
+        state.reviews[state.reviewCount.currentReview].slugLine
+      ),
+      React.createElement(
+        "p",
+        null,
+        state.reviews[state.reviewCount.currentReview].review
+      ),
+      React.createElement(
+        "div",
+        { className: "auth" },
+        React.createElement(
+          "strong",
+          null,
+          state.reviews[state.reviewCount.currentReview].author,
+          " -",
+          React.createElement(
+            "em",
+            null,
+            state.reviews[state.reviewCount.currentReview].authorID
+          )
+        )
+      )
+    );
+  };
+
+  var smashThatLeftClick = function smashThatLeftClick() {
+    if (state.reviewCount.currentReview == 0) {
+      //console.log('we gucci')
+    } else {
+      actions.arrowLeftBtn();
+    }
+  };
+
+  var smashThatRightClick = function smashThatRightClick() {
+    if (state.reviewCount.currentReview == state.reviews.length - 1) {
+      //console.log('we gucci')
+    } else {
+      actions.arrowRightBtn();
+    }
+  };
+
+  return React.createElement(
+    "section",
+    { id: "Reviews" },
+    React.createElement(
+      "div",
+      { className: "container" },
+      React.createElement(
+        "div",
+        { className: "row" },
+        React.createElement(
+          "div",
+          { className: "col-md-8" },
+          React.createElement("img", { src: "" })
+        )
+      ),
+      React.createElement(
+        "div",
+        { className: "col-md-4" },
+        searchReviews(),
+        React.createElement(
+          "div",
+          { className: "decoration" },
+          React.createElement("i", { onClick: smashThatLeftClick,
+            className: "fa fa-arrow-left " + (state.reviewCount.currentReview > 0 ? 'ready' : ''),
+            "aria-hidden": "true" }),
+          React.createElement("i", { onClick: smashThatRightClick,
+            className: "fa fa-arrow-right " + (state.reviewCount.currentReview == state.reviews.length - 1 ? '' : 'ready'), "aria-hidden": "true" })
+        )
+      )
+    )
+  );
 }
 
 /***/ }),
-/* 11 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 22 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* unused harmony export default */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp__ = __webpack_require__(0);
 
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-exports.default = SeasonalMenu;
-
-var _hyperapp = __webpack_require__(0);
 
 function SeasonalMenu(_ref) {
-	var state = _ref.state,
-	    actions = _ref.actions;
+  var state = _ref.state,
+      actions = _ref.actions;
 
-	return React.createElement(
-		"section",
-		{ id: "SpecialMenu", className: "texturebg" },
-		React.createElement(
-			"div",
-			{ className: "container" },
-			React.createElement(
-				"h5",
-				{ className: "comp-title" },
-				"Seasonal Menu"
-			),
-			React.createElement(
-				"h2",
-				null,
-				"Upcoming Summer Specialties"
-			),
-			React.createElement(
-				"div",
-				{ className: "row boxes" },
-				React.createElement(
-					"div",
-					{ className: "col-md-4" },
-					React.createElement(
-						"div",
-						{ className: "box" },
-						React.createElement(
-							"div",
-							{ className: "box-img" },
-							React.createElement(
-								"div",
-								{ className: "pricey-boy" },
-								"$39"
-							)
-						),
-						React.createElement(
-							"span",
-							{ className: "title" },
-							"Come back to this"
-						),
-						React.createElement(
-							"p",
-							{ "class": "details" },
-							"Some details to add later"
-						)
-					)
-				),
-				React.createElement(
-					"div",
-					{ className: "col-md-4" },
-					React.createElement(
-						"div",
-						{ className: "box" },
-						React.createElement(
-							"div",
-							{ className: "box-img" },
-							React.createElement(
-								"div",
-								{ className: "pricey-boy" },
-								"$39"
-							)
-						),
-						React.createElement(
-							"span",
-							{ className: "title" },
-							"Come back to this"
-						),
-						React.createElement(
-							"p",
-							{ "class": "details" },
-							"Some details to add later"
-						)
-					)
-				),
-				React.createElement(
-					"div",
-					{ className: "col-md-4" },
-					React.createElement(
-						"div",
-						{ className: "box" },
-						React.createElement(
-							"div",
-							{ className: "box-img" },
-							React.createElement(
-								"div",
-								{ className: "pricey-boy" },
-								"$39"
-							)
-						),
-						React.createElement(
-							"span",
-							{ className: "title" },
-							"Come back to this"
-						),
-						React.createElement(
-							"p",
-							{ "class": "details" },
-							"Some details to add later"
-						)
-					)
-				)
-			),
-			React.createElement(
-				"a",
-				{ href: "#", className: "link" },
-				" View Menu"
-			)
-		)
-	);
+  var searchMenu = function searchMenu() {
+    return state.seasonalMenu.map(function (item) {
+      return React.createElement(
+        "div",
+        { className: "col-md-4" },
+        React.createElement(
+          "div",
+          { className: "box" },
+          React.createElement(
+            "div",
+            { className: "box-img" },
+            React.createElement(
+              "div",
+              { className: "price-circle" },
+              item.price
+            ),
+            React.createElement(
+              "span",
+              { className: "title" },
+              item.title
+            ),
+            React.createElement(
+              "p",
+              { className: "details" },
+              item.description
+            )
+          )
+        )
+      );
+    });
+  };
+
+  return React.createElement(
+    "section",
+    { id: "SpecialMenu", className: "texturebg" },
+    React.createElement(
+      "div",
+      { className: "container" },
+      React.createElement(
+        "h5",
+        { className: "comp-title" },
+        "Seasonal Menu"
+      ),
+      React.createElement(
+        "h2",
+        null,
+        "Upcoming Summer Specialties"
+      ),
+      React.createElement(
+        "div",
+        { className: "row boxes" },
+        searchMenu()
+      ),
+      React.createElement(
+        "a",
+        { href: "#", className: "link" },
+        " ",
+        "View Menu"
+      )
+    )
+  );
 }
 
 /***/ }),
-/* 12 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 23 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_hyperapp__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_hyperapp_redux_devtools__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_hyperapp_redux_devtools___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_hyperapp_redux_devtools__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__actions_actions_js__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__state_globalState_js__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_App_js__ = __webpack_require__(10);
 
 
-var _hyperapp = __webpack_require__(0);
 
-var _actions = __webpack_require__(1);
 
-var _globalState = __webpack_require__(3);
 
-var _App = __webpack_require__(2);
 
-var _App2 = _interopRequireDefault(_App);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-(0, _hyperapp.app)({
-  state: _globalState.globalState,
-  view: function view(state, actions) {
-    return React.createElement(_App2.default, { state: state, actions: actions });
-  },
-  root: document.getElementById("app"),
-  actions: _actions.actions,
-  events: {
-    action: function action(state, actions, _ref) {
-      var name = _ref.name,
-          data = _ref.data;
-
-      console.group("Action Info");
-      console.log("Name:", name);
-      console.log("Data:", data);
-      console.groupEnd();
+window.onload = function () {
+  //This should fix the render bug
+  __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_4__components_App_js__["a" /* default */])({
+    state: __WEBPACK_IMPORTED_MODULE_3__state_globalState_js__["a" /* globalState */],
+    view: function view(state, actions) {
+      return React.createElement("app", { state: state, actions: actions });
     },
-    load: function load(state, actions) {
-      actions.intro();
-    }
-  }
-});
+    root: document.getElementById("app"),
+    actions: __WEBPACK_IMPORTED_MODULE_2__actions_actions_js__["a" /* actions */],
+    events: {
+      action: function action(state, actions, _ref) {
+        var name = _ref.name,
+            data = _ref.data;
+
+        console.group("Action Info");
+        console.log("Name:", name);
+        console.log("Data:", data);
+        console.groupEnd();
+      },
+      load: function load(state, actions) {}
+    },
+    mixins: [__WEBPACK_IMPORTED_MODULE_1_hyperapp_redux_devtools___default()()]
+  });
+};
 
 /***/ })
-],[12]);
+],[23]);

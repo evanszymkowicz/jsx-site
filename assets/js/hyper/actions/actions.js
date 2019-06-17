@@ -17,5 +17,9 @@ var arrowRight = function(state, actions) {
 
 export const actions = {
   arrowLeft,
-  arrowRight
+  arrowRight,
+  intro,
+  // showMenu,
+  closeMenu,
+  close
 };
