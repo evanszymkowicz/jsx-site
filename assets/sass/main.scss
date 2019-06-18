@@ -5,54 +5,46 @@
 @import "variables";
 @import "grid";
 @import "Header";
-@import "LeadImage";
 @import "Background";
+@import "LeadImage";
 @import "SeasonalMenu";
 @import "QuoteGenerator";
 @import "Contact";
 @import "Reviews";
-@import "Footer";
 @import "Promotions";
 @import "Reservations";
-@import "Global";
+@import "Footer";
+// @import "Global";
 //Global scss last.
 
-// font-family: 'Rozha One', serif;
-// font-family: 'RT Sans', sans-serif;
-// font-family: 'Open Sans Condensed', sans-serif;
-
-//replace the old format
 @font-face {
   font-family: road_rage;
   src: url("/fonts/Road_Rage.otf");
 }
 
-body {
-  font-family: $textFont; //Some css tricks to make the process faster
+* {
+  max-width: 100%;
+}
+
+html {
   width: 100%;
-  height: 100vh;
-  overflow-x: hidden;
-  background: #fff;
+  height: 100%;
 
+  body {
+    font-family: $textFont;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background: #fff;
 
-  
-//     #app {
-//       width: 100%;
-//       height: 100%;
-//
-//       .app {
-//         width: 100%;
-//         height: 100%;
-//       }
-//     }
-//   }
-// }
+    #app {
+      width: 100%;
+      height: 100%;
 
-
-// * {
-//   max-width: 100%;
-// }
-//
-// html {
-//   width: 100%;
-//   height: 100%;
+      .app {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

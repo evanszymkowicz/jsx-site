@@ -1,51 +1,76 @@
 #Footer {
-	padding: 100px 0;
-  background: $footerBG;
-  width: 100%;
+  background: #141414;
+  padding: 5% 0;
   text-align: center;
-  nav {
-    margin: 0 auto 50px;
-    display: inline-block;
-    a {
-      color:white;
-      text-decoration: none;
-      display: inline-block;
-      padding: 10px 20px 10px 0;
-      transition: all 0.2s ease-in-out;
-      &:hover{
-        color: $red;
-        transition:  0.2s ease-in-out;
+  margin: auto;
+  position: relative;
+  height: 50%;
+
+  .container {
+    position: relative;
+    color: #FEFFFF;
+    .logo {
+      width: 10%;
+      height: 4rem;
+      margin: 0 auto;
+      background-image: url("/img/goose.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .links {
+      padding: 3% 0 10% 0;
+      li {
+        list-style-type: none;
+        display: inline-block;
+        padding: 0 3%;
+        border-right: 1px solid gray;
+        font-size: 1rem;
+        color: #F4F4F4;
+        cursor: pointer;
+
+        &:last-child {
+          border:none;
+        }
+        &:hover {
+          color: #6b6b6b;
+        }
       }
     }
-    p {
-      display: inline-block;
-      margin-right: 20px;
+    .social {
+      padding-bottom: 3%;
+
+      .media {
+        cursor: pointer;
+        display: inline-block;
+        padding: 0 2%;
+
+        &:hover {
+          color: #6b6b6b;
+        }
+      }
     }
+    .copyright {
+      color: #B6B7B8;
+      font-size: .5rem;
+      line-height: 1.1rem;
+    }
+
   }
-  .social-media {
-     margin: 0 0 30px;
-     padding: 0;
-    color: white;
-    text-decoration: none;
-    li {
-      padding: 20px;
-      display: inline-block;
-      .fa {
-        color: white;
-        text-decoration: none;
-        transition: all 0.2s ease-in-out;
-        &:hover{
-          color: $red;
-          transition:  0.2s ease-in-out;
+  @media (max-width: 570px) {
+    .container {
+      .links {
+        li {
+          font-size: 0.8rem;
+        }
+      }
+
+      .social {
+        .media {
+          padding: 0 5%;
         }
       }
     }
   }
-  .copyright {
-    color: $titleColor;
-    line-height: 1.5;
-    .fa {
-      margin-right: 10px;
-    }
-  }
+
 }

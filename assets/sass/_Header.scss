@@ -1,25 +1,112 @@
 header {
-	position: absolute;
-	width: 100px;
-	color: white;
-	padding: 20px;
-	z-index: 20;
+  position: absolute;
+  color: white;
+  width: 100%;
+  padding: 20px;
+  z-index: 5;
 
-	.logo{
-		display: inline-block;
-		//padding: 20px 10px;
-	}
+  .logo {
+    display: inline-block;
+    background-image: url("/img/goose.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 1.4rem;
+    width: 10%;
+  }
 
-	nav {
-		display: inline-block;
-		float: right;
-		text-align: right;
+  .hamburger {
+    display: none;
 
-		a{
-			display: inline-block;
-			color: white;
-			text-decoration: none;
-			padding: 0 10px;
-		}
-	}
+    div {
+      width: 35px;
+      height: 5px;
+      background-color: #f4f4f4;
+      margin: 6px 0;
+    }
+  }
+  nav {
+    display: inline-block;
+    float: right;
+    text-align: right;
+
+    a {
+      color: white;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      display: inline-block;
+      font-weight: 700;
+      transition: ease-in-out 0.2s;
+      text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+      &:hover {
+        color: #bcbdbe;
+        text-shadow: 0, 0, 0, 0;
+      }
+    }
+    .close {
+      display: none;
+      transition: ease-in-out 0.3s;
+    }
+  }
+}
+
+@media (max-width: 906px) {
+  header {
+    height: 100%;
+    overflow: hidden;
+    .logo {
+      display: inline-block;
+    }
+    .hamburger {
+      display: inline-block;
+      float: right;
+      cursor: pointer;
+      padding: 1px;
+
+      div {
+        transition: ease-in-out 0.5s;
+      }
+
+      &:hover {
+        div {
+          background-color: #bcbdbe;
+        }
+      }
+    }
+
+    nav {
+      transition: ease-in-out 0.5s;
+      background: black;
+      position: absolute;
+      right: -100%;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+
+      &.active {
+        right: 0;
+      }
+      a {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        padding: 10% 0;
+      }
+
+      .close {
+        display: block;
+        top: 3%;
+        right: 8%;
+        position: absolute;
+        font-size: 2rem;
+
+        &:hover {
+          color: #bcbdbe;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }

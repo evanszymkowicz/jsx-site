@@ -6,8 +6,6 @@
   position: relative;
   height: 100%;
   margin-top: 10%;
-  // overflow-x: hidden;
-
   .container {
     position: relative;
     h6 {
@@ -39,7 +37,6 @@
       .box {
         flex: none;
         width: 50%;
-        // border: 1px solid black;
         padding: 10%;
 
         &.event {
@@ -70,12 +67,12 @@
           }
         }
         &.image1 {
-          background-image: url("/images/communityCooking.jpg");
+          background-image: url("/img/communityCooking.jpg");
           background-position: center;
           background-size: cover;
         }
         &.image2 {
-          background-image: url("/images/forkSteak.jpg");
+          background-image: url("/img/forkSteak.jpg");
           background-position: center;
           background-size: cover;
         }
@@ -84,7 +81,6 @@
   }
 
   @media (max-width: 767px) {
-    // margin-top: 50%;
     padding: 20% 0;
     .container {
       .specialContainer {
