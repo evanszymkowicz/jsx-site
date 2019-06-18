@@ -1,0 +1,91 @@
+#Promotions {
+  background: #f0f0f0;
+  padding: 5% 0;
+  text-align: center;
+  margin: auto;
+  position: relative;
+  height: 100%;
+  margin-top: 10%;
+  .container {
+    position: relative;
+    h6 {
+      letter-spacing: 0.5rem;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      padding-bottom: 3%;
+      color: #b6b7b8;
+      font-family: $textFont;
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: 2rem;
+      text-transform: capitalize;
+      padding-bottom: 5%;
+      color: #141414;
+      font-family: $restaurantTitleFont;
+      font-weight: 700;
+    }
+
+    .specialContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding-bottom: 7%;
+      width: 60%;
+      margin: 0 auto;
+      .box {
+        flex: none;
+        width: 50%;
+        padding: 10%;
+
+        &.event {
+          background: #feffff;
+          .eventTitle {
+            color: #141414;
+            font-family: $restaurantTitleFont;
+            font-weight: 700;
+            text-transform: capitalize;
+            line-height: 1.4rem;
+          }
+          .divider {
+            padding: 10% 0;
+            color: #b6b7b8;
+            opacity: 0.5;
+          }
+          .eventDetails {
+            font-family: $textFont;
+            font-size: 0.6rem;
+            line-height: 1.2rem;
+            .eventAddress {
+              text-transform: capitalize;
+            }
+            .eventTime {
+            }
+            .eventDate {
+            }
+          }
+        }
+        &.image1 {
+          background-image: url("/img/communityCooking.jpg");
+          background-position: center;
+          background-size: cover;
+        }
+        &.image2 {
+          background-image: url("/img/forkSteak.jpg");
+          background-position: center;
+          background-size: cover;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: 20% 0;
+    .container {
+      .specialContainer {
+        width: 100%;
+      }
+    }
+  }
+}

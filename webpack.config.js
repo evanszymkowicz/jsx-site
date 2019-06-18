@@ -9,7 +9,6 @@ const VENDOR_LIBS = [
 module.exports = {
   entry: {
     hyper: './assets/js/hyper/index.js',
-    // regularJS: './assets/js/regularJS.js'
     vendor: VENDOR_LIBS
   },
   output: { filename: '[name].js',
@@ -23,7 +22,7 @@ module.exports = {
         options: {
           presets: [
             [ 'es2015', { modules: false } ],
-            'stage-0', 'react'
+            // 'stage-0', 'react'
           ]
         }
       },

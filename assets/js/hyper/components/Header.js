@@ -1,21 +1,25 @@
 import { h, app } from 'hyperapp';
-//	I'm going to keep using className so I don't forget about it
-//	Hyper doesn't require it, but it is jsx standard
 
-export default function Header ({ state, actions }) {
-	return (
-		<header>
-			<div className="container">
-				<div className="logo">
-						Logo
+export default function Header({ state, actions }) {
+  return (
+    <header>
+      <div className="container">
+        <div className="logo" />
+					<div className="hamburger" onclick={actions.showMenu}>
+  				<div />
+  				<div />
+  				<div />
 				</div>
-				<nav>
-					<a href="#">Home</a>
-					<a href="#">Locations</a>
-					<a href="#">Rewards</a>
-					<a href="#">Reservations</a>
+				<nav className={state.menu}>
+  					<a href="#SpecialMenu">Menu</a>
+  					<a href="#" onclick={actions.close}>Reservations</a>
+  					<a href="#Reviews">Reviews</a>
+  					<a href="#Contact">Contact</a>
+  					<div className="close" onclick={actions.closeMenu}>
+  					<i class="fas fa-times" />
+  					</div>
 				</nav>
 			</div>
 		</header>
 	);
-}
+};

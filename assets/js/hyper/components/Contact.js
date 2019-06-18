@@ -2,48 +2,42 @@ import {h, app} from 'hyperapp';
 
 export default function Contact({state, actions}) {
 	return (
-		<section id="contact" className="texturebg">
-			<div className="container">
-				<h5 className="comp-title">Contact</h5>
-				<h2></h2>
-				<div className="box">
-					<div className="row">
-						<div className="col-md-6">
-							<div className="city">
-								{state.companyInfo.location}
-							</div>
-							<h6 className="address">
-									123 Somewhere Avenue<br/>
-									Washington, D.C.
-							</h6>
-							<p><strong>email us:</strong><a href="mailto:info@steakjoint.com">info@steakjoint.com</a></p>
-							</div>
-							<div className="col-md-6">
-									<h6>
-									Lunch
-									</h6>
-									<div className="hours">
-									202 555-555
-									</div>
-									{/* TODO: Come back for this */}
-									<p>
-										Come back to this <br/>
-									</p>
-
-									<h6>
-									Dinner
-									</h6>
-									<div className="hours">
-									202 555-555
-									</div>
-									{/* TODO: Come back for this */}
-									<p>
-										Come back to this <br/>
-									</p>
-							</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	)
+		return (
+    <section id="Contact">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.7399040776495!2d-6.261147484122739!3d53.34791197997939!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!3m2!1sen!2sus!4v1462581622087"
+      width="600" height="450" frameborder="0" style="border:0" allowfullscreen>
+      </iframe>
+      <div className="container">
+	        <h6 data-aos="zoom-in" data-aos-once="true">Contact us</h6>
+	        <h3 data-aos="zoom-in" data-aos-once="true">we&#39;re here to help</h3>
+	        <div className="contactBox" data-aos="flip-left" data-aos-once="true">
+	          <div className="left">
+	            <div className="city">
+	              <strong>{state.restaurantInfo.address.city},</strong> {state.restaurantInfo.address.state}
+	            </div>
+	            <div className="address">
+	              {state.restaurantInfo.address.address}
+	            </div>
+	            <div className="email">
+	              <strong>Email: </strong>{state.restaurantInfo.email}
+	            </div>
+	          </div>
+	          <div className="right">
+	            Call Us:
+	            <div className="phoneNumber">
+	              +1(201)-555-5555
+	            </div>
+	            <div className="serviceInfo">
+	              <strong>Lunch Service:</strong><br/>
+	              Weekend Catering: Bookings from 12pm - 3pm
+	            </div>
+	            <div className="serviceInfo">
+	              <strong>Dinner Service:</strong><br/>
+	              Daily Catering: Bookings from 6pm - 8pm
+	            </div>
+	          </div>
+	        </div>
+      </div>
+    </section>
+  )
 }

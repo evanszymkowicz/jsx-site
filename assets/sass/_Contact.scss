@@ -1,45 +1,145 @@
 #Contact {
-	padding: 100px 0;
+  background: #f0f0f0;
+  padding: 5% 0;
+  text-align: center;
+  margin: auto;
+  position: relative;
+  height: 100%;
 
-	h2, h5 {
-		text-align: center;
-	}
+  iframe {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    height: 50%;
+  }
 
-	.box {
-		background: #fff;
-		padding: 70px;
-	}
+  .container {
+    position: relative;
+    h6 {
+      letter-spacing: 0.5rem;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      padding-bottom: 3%;
+      color: #b6b7b8;
+      font-family: $textFont;
+      font-weight: 700;
+    }
 
-	.city {
-		font-family: $displayFont;
-		font-size: 3rem;
-		margin-bottom: 2rem;
-	}
+    h3 {
+      font-size: 2rem;
+      text-transform: capitalize;
+      padding-bottom: 5%;
+      color: #141414;
+      font-family: $restaurantTitleFont;
+      font-weight: 700;
+    }
 
-	h6 {
-		font-size: .8rem;
-		//font-weight: 600;
-		color: $titleColor;
-		line-height: 1.7rem;
-		color: $black;
-	}
-	p {
-		font-weight: 400;
-		margin-bottom: 50px;
+    .contactBox {
+      overflow: hidden;
+      background: #feffff;
+      padding: 5%;
+      width: 70%;
+      margin: 0 auto;
+      .left {
+        display: inline-block;
+        float: left;
+        text-align: left;
+        width: 50%;
+        .city {
+          font-size: 1.3rem;
+          font-family: $restaurantTitleFont;
+          color: lightgray;
+          font-weight: 700;
+          color: #141414;
+          font-weight: 100;
+          strong {
+          }
+        }
+        .address {
+          color: #b6b7b8;
+          font-family: $textFont;
+          font-size: 0.8rem;
+          line-height: 1.2rem;
+          font-weight: 500;
+          padding: 5% 0;
+        }
+        .email {
+          color: #141414;
+          font-family: $textFont;
+          font-size: 0.8rem;
+          line-height: 1.2rem;
+          strong {
+            font-weight: 700;
+          }
+        }
+      }
+      .right {
+        display: inline-block;
+        float: right;
+        text-align: left;
+        width: 50%;
+        // color: #B6B7B8;
+        font-family: $textFont;
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+        font-weight: 700;
 
-		strong {
-			color: $black;
-			text-transform: capitalize;
-			font-weight: 600;
-		}
-		a {
-			color: $paragraphColor;
-			text-decoration: none;
+        .phoneNumber {
+          font-size: 1.7rem;
+          font-family: $restaurantTitleFont;
+          font-weight: 300;
+          color: #141414;
+          padding-top: 3%;
+        }
+        .serviceInfo {
+          font-weight: 500;
+          padding: 5% 0 2% 0;
+          line-height: 1.5rem;
+          width: 80%;
+          strong {
+            font-weight: 700;
+            color: #141414;
+          }
+        }
+      }
+    }
+  }
 
-			&:hover {
-				color: $red;
-				font-weight: 700;
-			}
-		}
-	}
+  @media (max-width: 852px) {
+    .container {
+      .contactBox {
+        width: 100%;
+      }
+    }
+  }
+
+  @media (max-width: 568px) {
+    iframe {
+      height: 70%;
+    }
+    .container {
+      .contactBox {
+        .left {
+          padding-right: 10%;
+          .city {
+            font-size: 1rem;
+            strong {
+              display: block;
+            }
+          }
+          .address {
+            font-size: 0.8rem;
+          }
+        }
+
+        .right {
+          .phoneNumber {
+            font-size: 1.3rem;
+            line-height: 1.5rem;
+          }
+        }
+      }
+    }
+  }
 }

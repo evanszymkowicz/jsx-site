@@ -1,25 +1,127 @@
 #Reviews {
+  background: #feffff;
+  height: auto;
   text-align: right;
+  position: relative;
+  padding: 10% 0 0 0;
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+    .first {
+      h6 {
+        text-transform: uppercase;
+        color: #cdcecf;
+        font-weight: 300;
+        letter-spacing: 1rem;
+        margin-bottom: 5%;
+      }
+      h2 {
+        text-transform: capitalize;
+        font-weight: 700;
+        font-size: 2.5rem;
+        font-family: $storyFont;
+        color: #2e2f30;
+      }
+      .reviewContainer {
+        min-height: 500px;
+        overflow: hidden;
+        .review {
+          display: inline-block;
+          width: 100%;
+          .reviewQuote {
+            padding: 10% 0;
+            font-weight: 700;
+          }
 
-  img {
-    max-width: 600px;
+          p {
+            word-spacing: 1px;
+            padding: 0 0 10% 0;
+            line-height: 1.5rem;
+            color: #6b6b6b;
+          }
+          .quote {
+            padding-bottom: 20%;
+            color: #060606;
+            font-weight: 700;
+            span {
+              font-size: 0.9rem;
+              font-weight: 100;
+              color: gray;
+            }
+
+            strong {
+              color: #bcbdbe;
+              font-weight: 700;
+              font-style: italic;
+            }
+          }
+        }
+      }
+
+      .arrow {
+        padding: 0 10% 0 0;
+        a {
+          padding: 0 10% 0 0;
+          color: #bcbdbe;
+          cursor: auto;
+
+          .fa-arrow-left {
+            text-decoration: none;
+            font-size: 1.5rem;
+          }
+          .fa-arrow-right {
+            text-decoration: none;
+            font-size: 1.5rem;
+          }
+          &.active {
+            color: #2e2f30;
+            cursor: pointer;
+          }
+        }
+      }
+      .reserve-btn {
+        padding: 3%;
+        border: 1px solid black;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        color: black;
+        font-family: $restaurantTitleFont;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 10% 0;
+    .row {
+      .first {
+        text-align: center;
+
+        .arrow {
+          padding: 0;
+          a {
+            padding: 0 5% 0 0;
+          }
+        }
+      }
+      .second {
+        text-align: center;
+        margin-bottom: 5%;
+      }
+    }
   }
 
-  h4 {
-    font-weight: 650;
-    font-size: 0.8rem;
-    margin-bottom: 2rem;
-  }
-
-  .auth {
-    font-size: 1rem;
-    color: $paragraphColor;
-    font-weight: 300;
-    text-transform: capitalize;
-
-    strong {
-      font-weight: 700;
-      color: $black;
+  @media (max-width: 400px) {
+    .container {
+      .row {
+        .second {
+          img {
+            width: 90%;
+          }
+        }
+      }
     }
   }
 }
