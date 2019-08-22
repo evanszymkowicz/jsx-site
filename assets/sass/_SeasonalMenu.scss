@@ -1,76 +1,157 @@
 #SeasonalMenu {
-	padding: 100px 0;
-	background: $greyBG; //#fdd; //linear-gradient(135deg, rgba(0,0,0,.4) 0, #002d77 100%);
-	background-image:
-	url("https://media.pixcove.com/N/2/9/Background-Contextual-Textures-Backgrounds-Texture-8406.jpg");
-	background-position: center;
-	// background-size: cover;
-	background-repeat: repeat;
+  background: #f0f0f0;
+  padding: 5% 0;
+  text-align: center;
+  margin: auto;
+  position: relative;
 
-	h2,h5 {
-		text-align: center;
-	}
-	.box {
-		background: #fff;
-		padding: 20px;
+  .container {
+    position: relative;
+    h6 {
+      letter-spacing: 0.5rem;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      padding-bottom: 3%;
+      color: #b6b7b8;
+      font-family: $textFont;
+      font-weight: 700;
+    }
 
-		.box-img {
-			width: 100px;
-			height: 200px;
-			background: linear-gradient(135deg, rgba(0,0,0,.4) 0, #002d77 100%);
-			background-image:
-				linear-gradient(135deg, rgba(0, 0, 0, .4) 0, #002d77 100%), url("https://boisedev.com/wp-content/uploads/2018/10/Grove-Oct-2018006s-1068x718.jpg");
-			background-position: center;
-			background-size: cover;
-			positon: relative;
-			margin-bottom: 75px;
-		}
+    h3 {
+      font-size: 2rem;
+      text-transform: capitalize;
+      padding-bottom: 5%;
+      color: #141414;
+      font-family: $restaurantTitleFont;
+      font-weight: 700;
+    }
 
-		.pricey-boy {
-			box-sizing: border-box;
-			position: absolute;
-			bottom: 0;
-			margin: 0 auto;
-			font-family: $displayFont;
-			font-size: 2.7rem;
-			background: #fff;
-			height: 100px;
-			width: 100px;
-			border-radius: 50%;
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			left: 50%;
-			transform: translateX(-50%, -50%);// IDEA: come back to this for the portfolio site
-			// -webkit-box-shadow: 0 0 0 10px rgba(232, 232, 232, 0.41);
-			// -moz-box-shadow: 0 0 0 10px rgba(232, 232, 232, 0.41);
-			box-shadow: 0 0 0 10px rgba(232, 232, 255, 0.41);
-		}
+    .seasonalContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding-bottom: 7%;
+      width: 90%;
+      margin: 0 auto;
+      .seasonal {
+        flex-basis: 30%;
+        padding: 2%;
+        background: #fff;
+        &.one {
+        }
+        &.two {
+        }
+        &.three {
+        }
 
-		.title{
-			display: block;
-			font-weight: 600;
-			font-size: .9rem;
-			text-align: center;
-			line-height: 1.5;
-		}
-		.details{
-			font-weight: 300;
-			font-size: 0.8rem;
-			text-align: center;
-			line-height: 2;
-			margin: 0;
-		}
+        .seasonalTop {
+          background-image: url("/images/filletMignon.jpg");
+          max-width: 100%;
+          max-height: 100%;
+          width: 100%;
+          height: 50%;
+          padding-bottom: 60%;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          margin-bottom: 5rem;
 
-		.boxes {
-			padding-bottom: 50px;
-		}
+          .seasonalPrice {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #feffff;
+            color: black;
+            border-radius: 50%;
+            box-shadow: 0px 0px 0px 8px rgba(255, 255, 255, 0.7);
+            font-family: $storyFont;
+            font-weight: 400;
+            font-size: 1.9rem;
+            height: 100px;
+            width: 100px;
+            left: 50%;
+            margin: 0 auto;
+            transform: translate(0%, 150%);
+          }
+        }
 
-		a.link {
-			color: #000;
-			font-family: $displayFont;
-			text-align: center;
-			display: block;
-		}
-	}
+        .seasonalDescription {
+          .dish {
+            font-weight: 700;
+            padding: 5%;
+            font-size: 0.8rem;
+          }
+          .ingredients {
+            color: #6b6b6b;
+            font-size: 0.8rem;
+            word-spacing: normal;
+          }
+        }
+      }
+    }
+    .menuLink {
+      text-decoration: none;
+      text-transform: uppercase;
+      display: inline;
+      a {
+        color: #141414;
+        font-family: serif;
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    margin-top: 50%;
+    padding: 20% 0;
+    .container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      .hContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+        h3 {
+          width: 100%;
+        }
+      }
+      .seasonalContainer {
+        .seasonal {
+          .seasonalTop {
+            .seasonalPrice {
+              transform: translate(0%, 120%);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 570px) {
+    .container {
+      .hContainer {
+        h3 {
+          width: 100%;
+        }
+      }
+
+      .seasonalContainer {
+        .seasonal {
+          flex-basis: 100%;
+          margin-bottom: 15px;
+          .seasonalTop {
+            .seasonalPrice {
+              transform: translate(0%, 170%);
+            }
+          }
+        }
+      }
+    }
+  }
 }

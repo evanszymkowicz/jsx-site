@@ -1,45 +1,41 @@
 #Contact {
-	padding: 100px 0;
-
-	h2, h5 {
-		text-align: center;
-	}
-
-	.box {
-		background: #fff;
-		padding: 70px;
-	}
-
-	.city {
-		font-family: $displayFont;
-		font-size: 3rem;
-		margin-bottom: 2rem;
-	}
-
-	h6 {
-		font-size: .8rem;
-		//font-weight: 600;
-		color: $titleColor;
-		line-height: 1.7rem;
-		color: $black;
-	}
-	p {
-		font-weight: 400;
-		margin-bottom: 50px;
-
-		strong {
-			color: $black;
-			text-transform: capitalize;
-			font-weight: 600;
-		}
-		a {
-			color: $paragraphColor;
-			text-decoration: none;
-
-			&:hover {
-				color: $red;
-				font-weight: 700;
-			}
-		}
-	}
+  padding: 100px 0;
+  background-color: $greyBG;
+  h2,
+  h5 {
+    text-align: center;
+  }
+  .box {
+    background: white;
+    padding: 70px;
+    .title {
+      font-size: 2rem;
+      font-family: $displayFont;
+      margin-bottom: 1rem;
+    }
+    h6 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: $black;
+      line-height: 1.7;
+    }
+    p {
+      font-size: 1rem;
+      color: $red;
+      margin-bottom: 20px;
+      strong {
+        color: $black;
+        font-weight: 400;
+        text-transform: capitalize;
+        font-size: 1.1rem;
+      }
+      a {
+        color: $red;
+        text-decoration: none;
+        &:hover {
+          font-weight: 700;
+        }
+      }
+    }
+  }
 }

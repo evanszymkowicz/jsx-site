@@ -1,25 +1,39 @@
 #Reviews {
+  padding: 100px 0;
   text-align: right;
-
-  img {
-    max-width: 600px;
+  p {
+    font-size: 1.4rem;
   }
-
-  h4 {
-    font-weight: 650;
-    font-size: 0.8rem;
-    margin-bottom: 2rem;
-  }
-
-  .auth {
-    font-size: 1rem;
+  .quote {
     color: $paragraphColor;
-    font-weight: 300;
-    text-transform: capitalize;
-
+    margin: 0.5rem 0 3rem;
+    line-height: 1.4;
     strong {
-      font-weight: 700;
       color: $black;
+      font-weight: 700;
     }
+  }
+  .chef-img {
+    float: left;
+    max-width: 600px;
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+  }
+  .comp-title {
+    margin-bottom: 50px;
+  }
+  .arrows {
+    .fa-arrow-left,
+    .fa-arrow-right {
+      font-size: 1.7rem;
+      margin: 10px;
+      color: $paragraphColor;
+      cursor: pointer;
+    }
+  }
+  .fa-arrow-left.ready,
+  .fa-arrow-right.ready {
+    color: $black;
   }
 }

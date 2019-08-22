@@ -1,48 +1,37 @@
-import { h, app } from 'hyperapp';
+import { h, app } from "hyperapp";
 
-export default function Footer ({ state, actions }) {
-	return (
-		<footer id="Footer">
-			<div className="container">
-				<nav className="footer-menu">
-					<a href="#Header">Home</a>
-				<a href="#Header">Home</a>
-          <p>|</p>
-          <a href="#OurStory">About</a>
-          <p>|</p>
-          <a href="#SpecialMenu">Seasonal Menu</a>
-          <p>|</p>
-          <a href="#Reviews">Reviews</a>
-          <p>|</p>
-          <a href="#Reservations">Reservations</a>
-          <p>|</p>
-          <a href="#ContactUs">Contact</a>
-        </nav>
-
-        <ul class="social-media">
-          <li>
-            <a href="https://twitter.com/" target="new">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/" target="new">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-          </li>
-          <li>
-            <a href="https://plus.google.com/discover" target="new">
-              <i class="fa fa-google-plus" aria-hidden="true"></i>
-            </a>
-          </li>
-        </ul>
-
+export const Footer = ({ state, actions }) => {
+  return (
+    <section id="Footer">
+      <div className="container">
+        <div className="logo" />
+        <div className="links">
+          <li>Reservations</li>
+          <li>Catering</li>
+          <li>Contact</li>
+          <li>Reviews</li>
+        </div>
+        <div className="social">
+          <div className="media">
+            <i class="fab fa-twitter" />
+          </div>
+          <div className="media">
+            <i class="fab fa-facebook-f" />
+          </div>
+          <div className="media">
+            <i class="fab fa-instagram" />
+          </div>
+          <div className="media">
+            <i class="fas fa-rss" />
+          </div>
+        </div>
         <div class="copyright">
-          <i class="fa fa-copyright" aria-hidden="true"></i>
-          Evan Szymkowicz<br/>
+          <i class="fa fa-copyright" aria-hidden="true" />
+          Evan Szymkowicz
+          <br />
           2019
         </div>
       </div>
-    </footer>
-  )
-}
+    </section>
+  );
+};
